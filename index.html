@@ -418,7 +418,7 @@
             padding: 12px 20px;
             box-shadow: 0 -4px 20px rgba(0,0,0,0.1);
             display: flex;
-            gap: 12px;
+            gap: 8px;
             z-index: 50;
         }
 
@@ -429,7 +429,7 @@
             border-radius: 8px;
             font-weight: 900;
             cursor: pointer;
-            font-size: 14px;
+            font-size: 13px;
             transition: all 0.2s;
         }
 
@@ -442,9 +442,165 @@
             transform: scale(0.98);
         }
 
-        .sticky-secondary {
-            background: #f5f5f5;
+        .sticky-whatsapp {
+            background: #25D366;
+            color: white;
+        }
+
+        .sticky-whatsapp:active {
+            transform: scale(0.98);
+        }
+
+        /* COUNTDOWN TIMER */
+        .countdown-section {
+            background: linear-gradient(135deg, #FFD700 0%, #FFC700 100%);
+            border-radius: 16px;
+            padding: 24px 20px;
+            margin-bottom: 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .countdown-section::before {
+            content: '🔥 PROMO HARI INI SAJA!';
+            display: block;
+            background: #e03131;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 900;
+            letter-spacing: 0.5px;
+            margin-bottom: 16px;
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .countdown-label {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .countdown-timer {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .countdown-box {
+            background: rgba(255,255,255,0.8);
+            border-radius: 12px;
+            padding: 12px 16px;
+            min-width: 70px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .countdown-number {
+            font-size: 28px;
+            font-weight: 900;
+            color: #e03131;
+            line-height: 1;
+        }
+
+        .countdown-unit {
+            font-size: 11px;
+            color: #888;
+            font-weight: 600;
+            margin-top: 4px;
+        }
+
+        /* SLOT COUNTER */
+        .slot-counter {
+            background: rgba(255,255,255,0.6);
+            border-radius: 12px;
+            padding: 12px 16px;
+            font-size: 13px;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .slot-number {
+            color: #e03131;
+            font-weight: 900;
+            font-size: 14px;
+        }
+
+        /* GUARANTEE BADGE */
+        .guarantee-badge {
+            background: white;
+            border: 2px solid #25D366;
+            border-radius: 12px;
+            padding: 14px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .guarantee-badge strong {
+            color: #25D366;
+            font-size: 15px;
+        }
+
+        .guarantee-badge p {
+            color: #666;
+            font-size: 13px;
+            margin-top: 4px;
+        }
+
+        /* PAGE VIEW COUNTER */
+        .page-view-counter {
+            background: rgba(26,26,26,0.05);
+            border-radius: 12px;
+            padding: 10px 14px;
+            text-align: center;
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .page-view-counter strong {
             color: #1a1a1a;
+            font-weight: 900;
+        }
+
+        /* WHATSAPP BUTTON */
+        .whatsapp-button {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            background: #25D366;
+            color: white;
+            padding: 14px 20px;
+            border-radius: 12px;
+            border: none;
+            font-weight: 900;
+            cursor: pointer;
+            font-size: 14px;
+            width: 100%;
+            margin-bottom: 16px;
+            transition: all 0.3s;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+        }
+
+        .whatsapp-button:active {
+            transform: scale(0.98);
+        }
+
+        /* FLOAT ANIMATION IMPROVEMENT */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(20px); }
+        }
+
+        .section {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: slideUp 0.6s ease-out forwards;
         }
 
         /* RESPONSIVENESS */
@@ -500,6 +656,37 @@
             <h1>Stop Boncos</h1>
             <div class="subtitle">Mulai Pakai Sistem</div>
             <p class="desc">Bangun iklan profitable dengan framework yang terstruktur</p>
+        </div>
+    </section>
+
+    <!-- PAGE VIEW COUNTER -->
+    <div style="padding: 20px;">
+        <div class="page-view-counter">
+            👀 <strong id="page-views">3847</strong> orang sudah buka halaman ini hari ini
+        </div>
+    </div>
+
+    <!-- COUNTDOWN TIMER -->
+    <section class="section" style="padding: 0 20px 30px;">
+        <div class="countdown-section">
+            <div class="countdown-label">Berakhir dalam:</div>
+            <div class="countdown-timer">
+                <div class="countdown-box">
+                    <div class="countdown-number" id="hours">00</div>
+                    <div class="countdown-unit">JAM</div>
+                </div>
+                <div class="countdown-box">
+                    <div class="countdown-number" id="minutes">00</div>
+                    <div class="countdown-unit">MENIT</div>
+                </div>
+                <div class="countdown-box">
+                    <div class="countdown-number" id="seconds">00</div>
+                    <div class="countdown-unit">DETIK</div>
+                </div>
+            </div>
+            <div class="slot-counter">
+                ✅ <span class="slot-number" id="slots-bought">847</span> orang sudah membeli | Slot tersisa: <span class="slot-number" id="slots-left">23</span>
+            </div>
         </div>
     </section>
 
@@ -597,7 +784,18 @@
             <div class="price-old">Rp100.000</div>
             <div class="price-new">Rp50.000</div>
             <p class="price-subtext">Lebih murah dari 1 kali boncos</p>
-            <button class="cta-button" onclick="goToCheckout()">Beli Sekarang</button>
+            
+            <!-- GUARANTEE -->
+            <div class="guarantee-badge">
+                <strong>✅ 7 HARI UANG KEMBALI 100%</strong>
+                <p>Tanpa pertanyaan, jika merasa tidak puas</p>
+            </div>
+
+            <button class="whatsapp-button" onclick="goToWhatsApp()">
+                💬 Tanya di WhatsApp Dulu (Opsional)
+            </button>
+            
+            <button class="cta-button" onclick="goToCheckout()">Beli Sekarang - Rp50.000</button>
         </div>
     </section>
 
@@ -628,6 +826,9 @@
     <section class="final-cta">
         <h2>Kamu bisa terus menebak...</h2>
         <p>Atau mulai pakai sistem yang benar sekarang.</p>
+        <button class="whatsapp-button" onclick="goToWhatsApp()" style="margin-bottom: 12px;">
+            💬 Tanya di WhatsApp (Gratis Konsultasi)
+        </button>
         <button class="cta-button" onclick="goToCheckout()">Jangan Ulangi Kesalahan Yang Sama</button>
     </section>
 
@@ -638,15 +839,92 @@
 
     <!-- STICKY CTA -->
     <div class="sticky-cta">
-        <button class="sticky-primary" onclick="goToCheckout()">BELI SEKARANG</button>
-        <button class="sticky-secondary" onclick="scroll()">Lihat Selengkapnya</button>
+        <button class="sticky-whatsapp" onclick="goToWhatsApp()">💬 WhatsApp</button>
+        <button class="sticky-primary" onclick="goToCheckout()">Beli Sekarang</button>
     </div>
 
     <script>
-        function goToCheckout() {
-            // Ganti dengan link checkout kamu (Lynk, Stripe, dll)
-            window.location.href = 'YOUR_CHECKOUT_LINK_HERE';
+        // COUNTDOWN TIMER
+        function startCountdown() {
+            function updateTimer() {
+                const now = new Date();
+                const endOfDay = new Date();
+                endOfDay.setHours(00, 20, 59, 999);
+
+                const timeLeft = endOfDay - now;
+                
+                if (timeLeft <= 0) {
+                    document.getElementById('hours').textContent = '00';
+                    document.getElementById('minutes').textContent = '00';
+                    document.getElementById('seconds').textContent = '00';
+                    return;
+                }
+
+                const hours = Math.floor((timeLeft / (1000 * 60 * 60)) % 24);
+                const minutes = Math.floor((timeLeft / (1000 * 60)) % 60);
+                const seconds = Math.floor((timeLeft / 1000) % 60);
+
+                document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+                document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+                document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+            }
+
+            updateTimer();
+            setInterval(updateTimer, 1000);
         }
+
+        // SLOT COUNTER (Increment setiap page load)
+        function updateSlotCounter() {
+            let slotsBought = localStorage.getItem('slotsBought') || '847';
+            let slotsLeft = 50 - (parseInt(slotsBought) % 50);
+            if (slotsLeft <= 0) slotsLeft = 50;
+            
+            document.getElementById('slots-bought').textContent = slotsBought;
+            document.getElementById('slots-left').textContent = slotsLeft;
+            
+            // Increment setiap kali page load (untuk effect social proof)
+            localStorage.setItem('slotsBought', parseInt(slotsBought) + Math.floor(Math.random() * 3) + 1);
+        }
+
+        function goToCheckout() {
+            window.location.href = 'http://lynk.id/noboncosiklan/6840dkmynrqr/checkout';
+        }
+
+        function goToWhatsApp() {
+            const message = 'Halo, saya tertarik dengan produk Meta Ads Bukan Judi. Saya ingin bertanya lebih lanjut.';
+            const encodedMessage = encodeURIComponent(message);
+            window.location.href = `https://wa.me/628117199210?text=${encodedMessage}`;
+        }
+
+        // SCROLL REVEAL
+        function revealOnScroll() {
+            const elements = document.querySelectorAll('.section');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            elements.forEach(el => observer.observe(el));
+        }
+
+        // PAGE VIEW COUNTER
+        function initPageViewCounter() {
+            let views = localStorage.getItem('pageViews') || '3847';
+            document.getElementById('page-views').textContent = views;
+            localStorage.setItem('pageViews', parseInt(views) + Math.floor(Math.random() * 5) + 1);
+        }
+
+        // RUN ALL
+        window.addEventListener('DOMContentLoaded', function() {
+            startCountdown();
+            updateSlotCounter();
+            initPageViewCounter();
+            revealOnScroll();
+        });
     </script>
 </body>
 </html>
