@@ -4,6 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>META ADS BUKAN JUDI - Sistem Iklan Profitable</title>
+    
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1208509481043108');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1208509481043108&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+    
     <style>
         * {
             margin: 0;
@@ -938,10 +957,12 @@
         }
 
         function goToCheckout() {
+            fbq('track', 'InitiateCheckout');
             window.location.href = 'http://lynk.id/noboncosiklan/6840dkmynrqr/checkout';
         }
 
         function goToWhatsApp() {
+            fbq('track', 'Contact');
             const message = 'Halo, saya tertarik dengan produk Meta Ads Bukan Judi. Saya ingin bertanya lebih lanjut.';
             const encodedMessage = encodeURIComponent(message);
             window.location.href = `https://wa.me/628117199210?text=${encodedMessage}`;
@@ -955,6 +976,14 @@
                     if (entry.isIntersecting) {
                         entry.target.style.opacity = '1';
                         entry.target.style.transform = 'translateY(0)';
+                        
+                        // Track scroll depth ke Meta Pixel
+                        const sectionTitle = entry.target.querySelector('.section-title');
+                        if (sectionTitle) {
+                            fbq('track', 'ViewContent', {
+                                content_name: sectionTitle.textContent
+                            });
+                        }
                     }
                 });
             }, { threshold: 0.1 });
