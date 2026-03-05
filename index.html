@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>META ADS BUKAN JUDI - Sistem Iklan Profitable</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #1a1a1a;
+            background: linear-gradient(135deg, #fff9e6 0%, #fffbf0 100%);
+            overflow-x: hidden;
+        }
+
+        /* HEADER */
+        header {
+            background: #1a1a1a;
+            color: white;
+            padding: 16px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .logo {
+            font-weight: 900;
+            font-size: 13px;
+            letter-spacing: 1px;
+        }
+
+        .price-badge {
+            background: #FFD700;
+            color: #1a1a1a;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 13px;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            background: linear-gradient(135deg, #FFD700 0%, #FFC700 100%);
+            padding: 40px 20px 50px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 400px;
+            height: 400px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(20px); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            font-weight: 900;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+            line-height: 1.1;
+            letter-spacing: -1px;
+        }
+
+        .hero .subtitle {
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .hero .desc {
+            font-size: 15px;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        /* PROBLEM SECTION */
+        .section {
+            padding: 40px 20px;
+            max-width: 100%;
+        }
+
+        .section-title {
+            font-size: 24px;
+            font-weight: 900;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #1a1a1a;
+        }
+
+        .problem-list {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+            margin-bottom: 30px;
+        }
+
+        .problem-item {
+            padding: 16px 20px;
+            border-bottom: 1px solid #f0f0f0;
+            display: flex;
+            gap: 12px;
+            align-items: flex-start;
+        }
+
+        .problem-item:last-child {
+            border-bottom: none;
+        }
+
+        .problem-number {
+            background: #FFD700;
+            color: #1a1a1a;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: 14px;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .problem-text {
+            flex: 1;
+        }
+
+        .problem-text strong {
+            display: block;
+            color: #1a1a1a;
+            margin-bottom: 4px;
+            font-size: 15px;
+        }
+
+        .problem-text span {
+            color: #666;
+            font-size: 14px;
+        }
+
+        /* SOLUTION SECTION */
+        .solution-section {
+            background: white;
+            border-radius: 16px;
+            padding: 24px 20px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+            margin-bottom: 30px;
+        }
+
+        .solution-section h3 {
+            font-size: 18px;
+            font-weight: 900;
+            margin-bottom: 16px;
+            color: #1a1a1a;
+        }
+
+        .benefit-list {
+            list-style: none;
+        }
+
+        .benefit-list li {
+            padding: 12px 0;
+            padding-left: 28px;
+            position: relative;
+            color: #333;
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        .benefit-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #FFD700;
+            font-weight: 900;
+            font-size: 18px;
+        }
+
+        /* TESTIMONIAL */
+        .testimonial-section {
+            background: white;
+            border-radius: 16px;
+            padding: 24px 20px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+            margin-bottom: 30px;
+            border-left: 4px solid #FFD700;
+        }
+
+        .testimonial-text {
+            font-size: 15px;
+            color: #333;
+            margin-bottom: 12px;
+            font-style: italic;
+            line-height: 1.7;
+        }
+
+        .testimonial-author {
+            font-weight: 900;
+            color: #1a1a1a;
+            font-size: 14px;
+            margin-bottom: 4px;
+        }
+
+        .testimonial-role {
+            font-size: 12px;
+            color: #888;
+        }
+
+        /* BONUS SECTION */
+        .bonus-section {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            color: white;
+            border-radius: 16px;
+            padding: 24px 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+        }
+
+        .bonus-section h3 {
+            font-size: 18px;
+            font-weight: 900;
+            margin-bottom: 16px;
+            color: #FFD700;
+        }
+
+        .bonus-list {
+            list-style: none;
+        }
+
+        .bonus-list li {
+            padding: 10px 0;
+            padding-left: 24px;
+            position: relative;
+            font-size: 14px;
+            color: #e0e0e0;
+        }
+
+        .bonus-list li::before {
+            content: '🎁';
+            position: absolute;
+            left: 0;
+        }
+
+        /* PRICING SECTION */
+        .pricing-section {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #FFD700 0%, #FFC700 100%);
+            border-radius: 16px;
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pricing-section::before {
+            content: '🔥 PROMO TERBATAS';
+            position: absolute;
+            top: 12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #e03131;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 900;
+            letter-spacing: 0.5px;
+        }
+
+        .pricing-label {
+            font-size: 13px;
+            color: #555;
+            margin-top: 24px;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .price-old {
+            font-size: 18px;
+            color: #888;
+            text-decoration: line-through;
+            margin-bottom: 8px;
+        }
+
+        .price-new {
+            font-size: 48px;
+            font-weight: 900;
+            color: #1a1a1a;
+            margin-bottom: 12px;
+            line-height: 1;
+        }
+
+        .price-subtext {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        /* CTA BUTTON */
+        .cta-button {
+            background: #e03131;
+            color: white;
+            padding: 16px 32px;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 900;
+            cursor: pointer;
+            width: 100%;
+            max-width: 320px;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 24px rgba(224, 49, 49, 0.3);
+            letter-spacing: 0.5px;
+        }
+
+        .cta-button:active {
+            transform: scale(0.98);
+            box-shadow: 0 4px 12px rgba(224, 49, 49, 0.3);
+        }
+
+        .cta-button:hover {
+            background: #d02020;
+        }
+
+        /* FAQ SECTION */
+        .faq-section {
+            margin-bottom: 30px;
+        }
+
+        .faq-item {
+            background: white;
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+        }
+
+        .faq-question {
+            font-weight: 900;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+            font-size: 15px;
+        }
+
+        .faq-answer {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* FINAL CTA */
+        .final-cta {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #FFD700 0%, #FFC700 100%);
+            border-radius: 16px;
+            margin-bottom: 40px;
+        }
+
+        .final-cta h2 {
+            font-size: 28px;
+            font-weight: 900;
+            color: #1a1a1a;
+            margin-bottom: 12px;
+            line-height: 1.2;
+        }
+
+        .final-cta p {
+            color: #555;
+            margin-bottom: 24px;
+            font-size: 15px;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #1a1a1a;
+            color: #999;
+            text-align: center;
+            padding: 20px;
+            font-size: 12px;
+        }
+
+        /* STICKY CTA */
+        .sticky-cta {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            padding: 12px 20px;
+            box-shadow: 0 -4px 20px rgba(0,0,0,0.1);
+            display: flex;
+            gap: 12px;
+            z-index: 50;
+        }
+
+        .sticky-cta button {
+            flex: 1;
+            padding: 12px 16px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 900;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.2s;
+        }
+
+        .sticky-primary {
+            background: #e03131;
+            color: white;
+        }
+
+        .sticky-primary:active {
+            transform: scale(0.98);
+        }
+
+        .sticky-secondary {
+            background: #f5f5f5;
+            color: #1a1a1a;
+        }
+
+        /* RESPONSIVENESS */
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .section-title {
+                font-size: 20px;
+            }
+
+            .price-new {
+                font-size: 40px;
+            }
+
+            body {
+                padding-bottom: 70px;
+            }
+        }
+
+        /* ANIMATIONS */
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section {
+            animation: slideUp 0.6s ease-out forwards;
+        }
+
+        .section:nth-child(2) { animation-delay: 0.1s; }
+        .section:nth-child(3) { animation-delay: 0.2s; }
+        .section:nth-child(4) { animation-delay: 0.3s; }
+    </style>
+</head>
+<body>
+    <!-- HEADER -->
+    <header>
+        <div class="logo">META ADS BUKAN JUDI</div>
+        <div class="price-badge">Hanya Rp50.000</div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Stop Boncos</h1>
+            <div class="subtitle">Mulai Pakai Sistem</div>
+            <p class="desc">Bangun iklan profitable dengan framework yang terstruktur</p>
+        </div>
+    </section>
+
+    <!-- MASALAH -->
+    <section class="section">
+        <h2 class="section-title">Kenapa Iklan Terus Boncos?</h2>
+        <div class="problem-list">
+            <div class="problem-item">
+                <div class="problem-number">1</div>
+                <div class="problem-text">
+                    <strong>Optimasi Pakai Feeling</strong>
+                    <span>Matiin iklan tanpa paham metrik yang benar</span>
+                </div>
+            </div>
+            <div class="problem-item">
+                <div class="problem-number">2</div>
+                <div class="problem-text">
+                    <strong>Ganti Creative Terus</strong>
+                    <span>Tanpa sistem testing yang terstruktur</span>
+                </div>
+            </div>
+            <div class="problem-item">
+                <div class="problem-number">3</div>
+                <div class="problem-text">
+                    <strong>Scale Budget Agresif</strong>
+                    <span>Naik 2x langsung performa jatuh</span>
+                </div>
+            </div>
+            <div class="problem-item">
+                <div class="problem-number">4</div>
+                <div class="problem-text">
+                    <strong>Nggak Ada Dokumentasi</strong>
+                    <span>Setiap bulan mulai dari nol</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOLUTION -->
+    <section class="section">
+        <h2 class="section-title">Apa yang Kamu Kuasai</h2>
+        <div class="solution-section">
+            <ul class="benefit-list">
+                <li>Framework testing iklan yang terstruktur — bukan tebakan</li>
+                <li>Cara baca metrik seperti marketer profesional</li>
+                <li>SOP optimasi harian dan mingguan</li>
+                <li>Strategi scaling budget tanpa collapse</li>
+                <li>Checklist troubleshooting 10 penyebab boncos</li>
+                <li>Kapan lanjut dan kapan stop — berdasarkan data</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- TESTIMONIAL -->
+    <section class="section">
+        <h2 class="section-title">Hasil Nyata Dari Pengguna</h2>
+        
+        <div class="testimonial-section">
+            <p class="testimonial-text">"Dulu iklanku selalu rugi. Setelah pakai framework ini, ROAS naik dari 1.2x ke 3.8x dalam 2 minggu."</p>
+            <div class="testimonial-author">Aldi Pratama</div>
+            <div class="testimonial-role">Owner Toko Fashion Online ⭐⭐⭐⭐⭐</div>
+        </div>
+
+        <div class="testimonial-section">
+            <p class="testimonial-text">"Akhirnya paham kenapa iklan nggak stabil. Panduan ini to the point dan langsung bisa dipraktekin."</p>
+            <div class="testimonial-author">Sinta Rahayu</div>
+            <div class="testimonial-role">Digital Marketer, Skincare Brand ⭐⭐⭐⭐⭐</div>
+        </div>
+
+        <div class="testimonial-section">
+            <p class="testimonial-text">"Budget iklanku cuma 50rb/hari tapi udah bisa nutup biaya dan profit. Teknik scaling-nya luar biasa."</p>
+            <div class="testimonial-author">Rizal M.</div>
+            <div class="testimonial-role">UMKM Kuliner, Bandung ⭐⭐⭐⭐⭐</div>
+        </div>
+    </section>
+
+    <!-- BONUS -->
+    <section class="section">
+        <h2 class="section-title">Bonus Eksklusif</h2>
+        <div class="bonus-section">
+            <h3>Senilai Rp500.000</h3>
+            <ul class="bonus-list">
+                <li>Template Laporan Iklan Mingguan — spreadsheet siap pakai</li>
+                <li>Checklist Sebelum Launch — 30 poin penting</li>
+                <li>Panduan Copywriting yang Convert — formula hook & CTA</li>
+                <li>Script Iklan Siap Pakai — tinggal sesuaikan</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- PRICING -->
+    <section class="section">
+        <div class="pricing-section">
+            <div class="pricing-label">HARGA NORMAL</div>
+            <div class="price-old">Rp100.000</div>
+            <div class="price-new">Rp50.000</div>
+            <p class="price-subtext">Lebih murah dari 1 kali boncos</p>
+            <button class="cta-button" onclick="goToCheckout()">Beli Sekarang</button>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section">
+        <h2 class="section-title">Pertanyaan Sering Ditanya</h2>
+        <div class="faq-section">
+            <div class="faq-item">
+                <div class="faq-question">❓ Saya pemula, cocok nggak?</div>
+                <div class="faq-answer">Ya! Panduan ini untuk siapa pun yang sudah coba iklan Meta tapi hasilnya belum stabil. Bahasa mudah, tanpa jargon teknis.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">❓ Bedanya dengan panduan lain?</div>
+                <div class="faq-answer">Kebanyakan hanya mengajarkan setup. Kami fokus pada sistem — framework testing, baca data, dan scaling strategy yang bisa diulang setiap bulan.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">❓ Akses bagaimana setelah beli?</div>
+                <div class="faq-answer">Langsung dapat file PDF setelah pembayaran. Bisa dibuka di HP atau laptop kapan saja.</div>
+            </div>
+            <div class="faq-item">
+                <div class="faq-question">❓ Ada garansi?</div>
+                <div class="faq-answer">Dengan harga Rp50.000, risikonya minimal. Kalau nggak puas dalam 7 hari, hubungi kami dan kami bantu selesaikan masalahmu.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="final-cta">
+        <h2>Kamu bisa terus menebak...</h2>
+        <p>Atau mulai pakai sistem yang benar sekarang.</p>
+        <button class="cta-button" onclick="goToCheckout()">Jangan Ulangi Kesalahan Yang Sama</button>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2024 META ADS BUKAN JUDI | Semua Hak Dilindungi</p>
+    </footer>
+
+    <!-- STICKY CTA -->
+    <div class="sticky-cta">
+        <button class="sticky-primary" onclick="goToCheckout()">BELI SEKARANG</button>
+        <button class="sticky-secondary" onclick="scroll()">Lihat Selengkapnya</button>
+    </div>
+
+    <script>
+        function goToCheckout() {
+            // Ganti dengan link checkout kamu (Lynk, Stripe, dll)
+            window.location.href = 'YOUR_CHECKOUT_LINK_HERE';
+        }
+    </script>
+</body>
+</html>
